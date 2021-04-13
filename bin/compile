@@ -5,7 +5,7 @@ indent() {
   sed -u 's/^/       /'
 }
 
-imagemagic_folder=$(find /etc/ImageMagick-?)
+imagemagic_folder=$(find /etc/ImageMagick-? -type d)
 imagemagic_config=$(find "$imagemagic_folder/policy.xml")
 
 if [ $imagemagic_config ] ; then
