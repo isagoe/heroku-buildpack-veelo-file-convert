@@ -13,7 +13,7 @@ if [ $imagemagic_config ] ; then
 
     echo "       Updating permissions........"
 
-    chmod 777 "$imagemagic_folder/"
+    chmod 777 "$imagemagic_folder"
 
     echo "       Proceeding to update conversion policy........."
 
