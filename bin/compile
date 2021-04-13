@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+imagemagic_config=$(find /etc/ImageMagick-?/policy.xml)
+
+if [ $imagemagic_config ] ; then
+    echo "-----> Found ImageMagic Installation"
+    echo "       Proceeding to update conversion policy........."
+
+    sed -i 's/<policy domain="coder" rights="none" pattern="PDF" \/>/<policy domain="coder" rights="read|write" pattern="PDF" \/>/g' $imagemagic_config ; 
+    exit 0
+else 
+    echo "-----> Did not find policy file $imagemagic_config"; 
+    exit 1
+
+fi
