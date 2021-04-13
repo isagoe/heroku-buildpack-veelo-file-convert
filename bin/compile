@@ -6,7 +6,7 @@ indent() {
 }
 
 imagemagic_folder=$(find /etc/ImageMagick-?)
-imagemagic_config=$(find $imagemagic_folder/policy.xml)
+imagemagic_config=$(find "$imagemagic_folder/policy.xml")
 
 if [ $imagemagic_config ] ; then
     echo "-----> Found ImageMagic Installation"
