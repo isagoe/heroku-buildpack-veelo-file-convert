@@ -13,11 +13,12 @@ if [ $imagemagic_config ] ; then
 
     echo "       Updating permissions........"
 
-    chmod 777 "$imagemagic_folder"
+    # chmod 777 "$imagemagic_folder"
+    ln -s $imagemagic_config policy.xml
 
     echo "       Proceeding to update conversion policy........."
 
-    sed -i '/<\/policymap>/i\  <policy domain="coder" rights="read|write" pattern="PDF" />' $imagemagic_config ; 
+    sed -i '/<\/policymap>/i\  <policy domain="coder" rights="read|write" pattern="PDF" />' policy.xml ; 
     exit 0
 else 
     echo "-----> Did not find policy file $imagemagic_config"; 
