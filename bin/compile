@@ -13,7 +13,7 @@ if [ $imagemagic_config ] ; then
 
     echo "       Proceeding to update conversion policy........."
 
-    ln -s policy.xml $imagemagic_config
+    ln -sfn policy.xml $imagemagic_config
 
     exit 0
 else 
